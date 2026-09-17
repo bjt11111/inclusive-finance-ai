@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="多时区数字时钟" />
+  <title>世界时钟 | 普惠金融平台</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">普惠金融 AI 平台</p>
+        <h1>世界时钟</h1>
+        <p class="subtitle">实时查看不同地区的当前时间</p>
+      </div>
+      <button id="themeToggle" class="icon-button" type="button" aria-label="切换深色模式">☾</button>
+    </header>
+
+    <section class="toolbar" aria-label="时钟工具栏">
+      <label class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input id="timezoneSearch" type="search" placeholder="搜索城市或时区，例如：上海、London" autocomplete="off" />
+      </label>
+      <button id="addClock" class="primary-button" type="button">＋ 添加时钟</button>
+    </section>
+
+    <section id="clockGrid" class="clock-grid" aria-live="polite"></section>
+
+    <dialog id="clockDialog">
+      <form method="dialog" id="clockForm" class="dialog-card">
+        <div class="dialog-header">
+          <div>
+            <p class="eyebrow">自定义时钟</p>
+            <h2>添加时区</h2>
+          </div>
+          <button class="close-button" value="cancel" aria-label="关闭">×</button>
+        </div>
+        <label for="timezoneSelect">选择城市或时区</label>
+        <select id="timezoneSelect" required></select>
+        <div class="dialog-actions">
+          <button class="secondary-button" value="cancel">取消</button>
+          <button class="primary-button" value="default">添加</button>
+        </div>
+      </form>
+    </dialog>
+
+    <footer>时间根据设备系统时钟实时更新 · 支持本地保存时钟配置</footer>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
